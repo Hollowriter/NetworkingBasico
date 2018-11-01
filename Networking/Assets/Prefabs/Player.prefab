@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114830572274915336}
   - component: {fileID: 114191779347952958}
   - component: {fileID: 114291541535431818}
+  - component: {fileID: 114597883124150542}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -152,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796157482945924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.587, y: -0, z: 0.442}
+  m_LocalPosition: {x: 0.587, y: -0, z: 1.12}
   m_LocalScale: {x: 0.4, y: 0.40000024, z: 0.40000024}
   m_Children: []
   m_Father: {fileID: 4618429829624480}
@@ -165,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523160685311902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.4282758, y: -2.267058, z: -8.179076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4985271367228680}
@@ -382,6 +383,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114597883124150542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523160685311902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3962c2a51448743b30f17862f8b330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  healthBar: {fileID: 224158990400874652}
 --- !u!114 &114830572274915336
 MonoBehaviour:
   m_ObjectHideFlags: 1
