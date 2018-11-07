@@ -20,10 +20,9 @@ public class Health : NetworkBehaviour {
         {
             currentHealth = maxHealth;
             RpcRespawn();
-            Debug.Log("Esta Merto");
         }
         Debug.Log("Health: " + currentHealth);
-		// healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+        // healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 
     void OnChangeHealth(int health)
@@ -38,5 +37,10 @@ public class Health : NetworkBehaviour {
         {
             transform.position = Vector3.zero;
         }
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 }
