@@ -9,6 +9,14 @@ public class Health : NetworkBehaviour {
 	[SyncVar(hook = "OnChangeHealth")]
     public int currentHealth = maxHealth;
 	public RectTransform healthBar;
+    private NetworkStartPosition[] spawnPoints;
+    private void Start()
+    {
+        if (isLocalPlayer)
+        {
+            spawnPoints = FindObjectsOfType<NetworkStartPosition>();
+        }
+    }
     public void TakeDamage(int amount)
     {
 		if(!isServer) // Esto se ejecuta solo si esta en server para que no genere cambios anomalos entre los clientes
@@ -35,7 +43,13 @@ public class Health : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            transform.position = Vector3.zero;
+            Vector3 spawnPoint = Vector3.zero;
+            
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+            }
+            transform.position = spawnPoint;
         }
     }
 
